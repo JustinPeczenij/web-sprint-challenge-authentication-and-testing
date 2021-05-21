@@ -1,4 +1,5 @@
 // Write your tests here
 test('sanity', () => {
-  expect(true).toBe(false)
+  expect(process.env.NODE_ENV).toBe('testing')
 })
+
