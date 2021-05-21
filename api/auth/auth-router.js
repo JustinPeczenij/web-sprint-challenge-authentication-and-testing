@@ -6,7 +6,7 @@ const { checkBody } = require('../middleware/register')
 router.post('/register', checkBody, async (req, res, next) => {
   try {
     let user = req.body
-    const rounds = process.env.ROUNDS || 8
+    const rounds = process.env.ROUNDS || 8 //production will want to hide the # of rounds
     const hash = bcrypt.hashSync(user.password, rounds)
     user.password = hash
   
